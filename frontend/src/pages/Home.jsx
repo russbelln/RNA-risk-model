@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import { Button } from 'antd';
+import ReactPlayer from 'react-player';
 
 const githubUsers = [
   { username: 'russbelln', profileUrl: 'https://github.com/russbelln' },
@@ -10,6 +11,8 @@ const githubUsers = [
 ];
 
 const Home = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
     <div className="video-background">
       {/* Video de fondo */}
@@ -21,21 +24,21 @@ const Home = () => {
       {/* Contenido principal */}
       <div className="content">
         <h1>Welcome to RiskRadar</h1>
-        <p>Evalúa y visualiza tus datos fácilmente.</p>
+        <p>Evalúa y visualiza tus datos .</p>
       </div>
 
-      {/* Botón centrado */}
+      {/* Botón para mostrar video */}
       <div className="test-button-container">
         <Button
-          shape='round'
+          shape="round"
           className="test-button"
-          onClick={() => alert('Button Clicked')}
+          onClick={() => setShowVideo(true)}
         >
-          Watch video
+          Watch Video
         </Button>
       </div>
 
-      {/* Avatares centrados abajo */}
+      {/* Avatares */}
       <div className="avatar-container">
         <p className="creators-text">Maintainers:</p>
         <div className="avatar-row">
@@ -56,6 +59,24 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal del video */}
+      {showVideo && (
+        <div className="overlay">
+          <div className="video-container">
+            <button className="close-button" onClick={() => setShowVideo(false)}>
+              ✖
+            </button>
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+              controls
+              playing
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
