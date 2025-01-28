@@ -28,10 +28,10 @@ const Home = () => {
       </div>
 
       {/* Botón para mostrar video */}
-      <div className="test-button-container">
+      <div className="watch-video-button-container">
         <Button
           shape="round"
-          className="test-button"
+          className="watch-video-button"
           onClick={() => setShowVideo(true)}
         >
           Watch Video

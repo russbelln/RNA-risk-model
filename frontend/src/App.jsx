@@ -5,29 +5,22 @@ import Home from './pages/Home';
 import Page2 from './pages/Page2';
 import ScorePage from './pages/ScorePage';
 import HomeButton from './components/HomeButton'; // Botón reutilizable
+import './App.css'; // Asegúrate de importar el CSS aquí
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
     <Router>
-      <div style={{ display: 'flex', height: '100vh' }}>
+      <div className={`app-container ${collapsed ? 'sidebar-collapsed' : ''}`}>
         {/* Sidebar */}
         <Sidebar collapsed={collapsed} onToggle={() => setCollapsed(!collapsed)} />
 
         {/* Contenedor principal */}
-        <div style={{ flex: 1, position: 'relative' }}>
-          {/* Botón al lado de la sidebar */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '10px',
-              left: collapsed ? '90px' : '260px',
-              zIndex: 3,
-              transition: 'left 0.3s ease',
-            }}
-          >
-            <HomeButton />
+        <div className="main-content">
+          {/* Botón Home */}
+          <div className="home-button-container">
+            <HomeButton/>
           </div>
 
           {/* Rutas */}

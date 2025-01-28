@@ -48,7 +48,7 @@
 }
 
 /* Botón centrado */
-.test-button-container {
+.watch-video-button-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -56,7 +56,7 @@
   z-index: 10;
 }
 
-.test-button {
+.watch-video-button {
   font-size: 16px;
   padding: 10px 20px;
   background-color: #1b1919;
@@ -67,7 +67,7 @@
   transition: background-color 0.3s ease;
 }
 
-.test-button:hover {
+.watch-video-button:hover {
   background-color: #0056b3;
 }
 
@@ -126,14 +126,20 @@
   z-index: 20; /* Encima de todos los demás elementos */
 }
 
-/* Contenedor del video */
+/* Estilo para el contenedor del video */
 .video-container {
-  position: relative;
-  width: 80%;
-  max-width: 800px;
-  background-color: black;
-  border-radius: 10px;
-  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Cambia este valor para ajustar el ancho */
+  max-width: 800px; /* Ajusta el tamaño máximo si es necesario */
+  aspect-ratio: 16 / 9; /* Mantén la relación de aspecto del video */
+  background: black; /* Fondo negro para el cuadro del video */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que el contenido del video no se desborde */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Añade una sombra */
 }
 
 /* Botón para cerrar el modal */

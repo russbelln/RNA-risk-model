@@ -13,6 +13,7 @@ const HomeButton = () => {
       ghost
       onClick={() => navigate('/')}
       className="custom-home-button"
+      shape="round"
     >
       <img src={iconHome} alt="Home Icon" />
       RiskRadar
