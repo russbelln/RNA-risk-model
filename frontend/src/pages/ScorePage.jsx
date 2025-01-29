@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fetchData from '../services/Api';
-import {Form} from '../components/Form';
+import Form from '../components/Form';
 
 const ScorePage = () => {
   const [features, setFeatures] = useState([]);
