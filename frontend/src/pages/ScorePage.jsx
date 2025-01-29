@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {api} from '../services/Api';
+import fetchData from '../services/Api';
 import {Form} from '../components/Form';
 
 const ScorePage = () => {
@@ -8,7 +8,7 @@ const ScorePage = () => {
 
   useEffect(() => {
     // Obtener las características desde el backend
-    api.get('/features')
+    fetchData.get('/features')
       .then((response) => {
         setFeatures(response.data);
       })
@@ -17,7 +17,7 @@ const ScorePage = () => {
 
   const handleFormSubmit = (formData) => {
     // Enviar datos al backend para calcular el score
-    api.post('/score', { features: formData })
+    fetchData.post('/score', { features: formData })
       .then((response) => {
         setScore(response.data.score);
       })
