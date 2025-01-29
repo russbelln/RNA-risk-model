@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import iconHome from '../assets/radar.png';
 import './HomeButton.css';
 
 const HomeButton = () => {
@@ -15,7 +14,7 @@ const HomeButton = () => {
       className="custom-home-button"
       shape="round"
     >
-      <img src={iconHome} alt="Home Icon" />
+      <img src="/radar.png" alt="Home Icon" />
       RiskRadar
     </Button>
   );
