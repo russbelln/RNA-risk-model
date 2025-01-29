@@ -1,4 +1,5 @@
+import os
+
 class Config:
-    SECRET_KEY = 'supersecretkey'  # Cambiar por una clave segura
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost/riskmodel'  # Cambiar a PostgreSQL para producción
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")  # Render proporciona esta variable automáticamente
     SQLALCHEMY_TRACK_MODIFICATIONS = False
