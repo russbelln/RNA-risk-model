@@ -1,8 +1,15 @@
-import axios from 'axios';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-// Configura la URL base de tu backend
-const api = axios.create({
-  baseURL: 'http://127.0.0.1:5000/api',
-});
-
-export default api;
+export const fetchData = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/endpoint`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
+  }
+};
