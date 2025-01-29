@@ -1,0 +1,19 @@
+[
+    {
+      "name": "Edad",
+      "type": "number",
+      "description": "Edad del solicitante"
+    },
+    {
+      "name": "Ingreso",
+      "type": "number",
+      "description": "Ingreso mensual en USD"
+    },
+    {
+      "name": "Historial de crédito",
+      "type": "dropdown",
+      "options": "Bueno,Malo,Regular",
+      "description": "Historial crediticio del solicitante"
+    }
+  ]
+  
