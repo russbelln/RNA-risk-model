@@ -21,22 +21,25 @@ const Home = () => {
         Your browser does not support the video tag.
       </video>
 
+      <div className='home-container'>
       {/* Contenido principal */}
-      <div className="content">
-        <h1>Welcome to RiskRadar</h1>
-        <p>Evalúa y visualiza tus datos .</p>
+        <div className="content">
+          <h1>Unleash the power of risk modeling</h1>
+          <p>Assess, predict, and manage risks with precision—powered by data.</p>
+          {/* Botón para mostrar video */}
+          <div className="watch-video-button-container">
+            <Button
+              shape="round"
+              className="watch-video-button"
+              onClick={() => setShowVideo(true)}
+            >
+              Watch Video
+            </Button>
+          </div>
+        </div>
       </div>
 
-      {/* Botón para mostrar video */}
-      <div className="watch-video-button-container">
-        <Button
-          shape="round"
-          className="watch-video-button"
-          onClick={() => setShowVideo(true)}
-        >
-          Watch Video
-        </Button>
-      </div>
+
 
       {/* Avatares */}
       <div className="avatar-container">

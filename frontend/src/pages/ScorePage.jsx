@@ -10,7 +10,11 @@ const ScorePage = () => {
     // Obtener las características desde el backend
     fetchData.get('/features')
       .then((response) => {
-        setFeatures(response.data);
+        if (Array.isArray(response.data)) {
+          setFeatures(response.data);
+        } else {
+          console.error('Error: La respuesta de la API no es un array');
+        }
       })
       .catch((error) => console.error('Error fetching features:', error));
   }, []);
@@ -28,7 +32,7 @@ const ScorePage = () => {
     <div>
       <h1>Calculadora de Score</h1>
       <Form features={features} onSubmit={handleFormSubmit} />
-      {score !== null && <h2>Tu score es: {score}</h2>}
+      {score !== null && <p>Score: {score}</p>}
     </div>
   );
 };

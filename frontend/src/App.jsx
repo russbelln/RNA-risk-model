@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Page2 from './pages/Page2';
+import AboutUs from './pages/Page2';
 import ScorePage from './pages/ScorePage';
 import HomeButton from './components/HomeButton'; // Botón reutilizable
 import './App.css'; // Asegúrate de importar el CSS aquí
@@ -26,8 +26,8 @@ function App() {
           {/* Rutas */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/page2" element={<Page2 />} />
             <Route path="/score" element={<ScorePage />} />
+            <Route path="/aboutus" element={<AboutUs />} />
           </Routes>
         </div>
       </div>

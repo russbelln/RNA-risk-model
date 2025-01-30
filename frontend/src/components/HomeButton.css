@@ -15,7 +15,7 @@
     color: var(--framer-text-color) !important;
     text-align: var(--framer-text-alignment);
     background-color: transparent; /* Fondo transparente para "ghost" */
-    border: 1px solid var(--framer-text-color) !important; /* Borde del mismo color del texto */
+    border: 1px solid var(--framer-text-color); /* Borde del mismo color del texto */
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;

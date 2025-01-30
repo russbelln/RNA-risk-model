@@ -1,7 +1,8 @@
 import axios from 'axios';
+import config from '../../config';
 
 const fetchData = axios.create({
-  baseURL: `${process.env.REACT_APP_API_BASE_URL}/api` || 'http://localhost:5000/api',
+  baseURL: `${config.apiBaseUrl}/`,
 });
 
 export default fetchData;

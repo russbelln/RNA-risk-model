@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 
 const Form = ({ features, onSubmit }) => {
-  console.log('Features recibidas', features)
-  const [formValues, setFormValues] = useState({});
+  const [formData, setFormData] = useState({});
 
   const handleChange = (e, feature) => {
-    const { value } = e.target;
-    setFormValues({
-      ...formValues,
-      [feature.name]: feature.type === 'number' ? parseFloat(value) : value,
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: feature.type === 'number' ? parseFloat(value) : value,
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formValues);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit(formData);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      {features.map((feature) => (
-        <div key={feature.id}>
+      {features.map((feature, idx) => (
+        <div key={idx}>
           <label>{feature.name}</label>
           {feature.type === 'dropdown' ? (
-            <select onChange={(e) => handleChange(e, feature)}>
+            <select name={feature.name} onChange={(e) => handleChange(e, feature)}>
+              <option value="">Select an option</option>
               {feature.options.split(',').map((option, idx) => (
                 <option key={idx} value={option}>
                   {option}
@@ -32,7 +32,9 @@ const Form = ({ features, onSubmit }) => {
             </select>
           ) : (
             <input
-              type={feature.type}
+              type={feature.type === 'number' ? 'number' : 'text'}
+              name={feature.name}
+              step="any" // Permite valores de punto flotante
               onChange={(e) => handleChange(e, feature)}
             />
           )}

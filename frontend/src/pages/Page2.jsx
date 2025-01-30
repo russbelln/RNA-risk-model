@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Page2 = () => {
-  return <h1>Bienvenido a la Página 2</h1>;
+const AboutUs = () => {
+  return <h1>About us</h1>;
 };
 
-export default Page2;
+export default AboutUs;

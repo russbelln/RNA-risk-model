@@ -39,32 +39,38 @@
 }
 
 /* Contenido principal */
-.content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  font-family: Arial, sans-serif;
+.home-container {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: flex-start; /* Alinea a la izquierda */
+  height: 100vh; /* Altura completa de la ventana */
+  padding-left: 180px; /* Ajusta el espacio a la izquierda según sea necesario */
 }
 
-/* Botón centrado */
+.content {
+  max-width: 700px; /* Ajusta el ancho máximo del contenido */
+  position: relative;
+  z-index: 1;
+  text-align: left; /* Alinea el texto a la izquierda */
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 23px;
+  word-wrap: break-word; /* Permite que el texto se ajuste automáticamente */
+}
+
 .watch-video-button-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+  margin-top: 20px; /* Ajusta el espacio superior según sea necesario */
+  text-align: left; /* Alinea el botón a la izquierda */
 }
 
 .watch-video-button {
-  font-size: 16px;
   padding: 10px 20px;
-  background-color: #1b1919;
+  font-size: 16px;
+  background-color: rgb(46, 46, 46);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .watch-video-button:hover {

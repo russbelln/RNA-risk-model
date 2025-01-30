@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request 
 from app.models import Feature, UserInput
 from app import db
+from app.services.score_service import calculate_probability
 
 api = Blueprint('api', __name__)
 
@@ -26,8 +27,9 @@ def calculate_score():
     data = request.json
     user_features = data.get('features', {})
     
+    
     # Lógica para calcular el score (placeholder)
-    score = sum(user_features.values()) / len(user_features)  # Ejemplo: promedio simple
+    score = float(calculate_probability(user_features))
     
     # Guardar entrada del usuario
     user_input = UserInput(features=str(user_features), score=score)
