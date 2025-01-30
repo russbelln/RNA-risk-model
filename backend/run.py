@@ -29,5 +29,6 @@ def sync_db():
         print("Base de datos sincronizada con el archivo de configuración.")
 
 if __name__ == "__main__":
+    sync_db()
     port = int(os.environ.get("BACKEND_PORT", 5000))
     app.run(host="0.0.0.0", port=port)
