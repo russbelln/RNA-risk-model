@@ -7,6 +7,13 @@ export default defineConfig({
     host: '0.0.0.0',
     port: process.env.PORT || 4173, // Usa el puerto asignado por Render
     allowedHosts: ['rna-risk-model-frontend.onrender.com'] // Agrega tu dominio de Render
-  }
+  },
+  server: {
+    host: 'localhost',
+    port: 3000,
+  },
+  define: {
+    'process.env': process.env
+  },
 });
 

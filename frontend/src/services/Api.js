@@ -1,17 +1,7 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+import axios from 'axios';
 
-const fetchData = async () => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/endpoint`);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    throw error;
-  }
-};
+const fetchData = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api',
+});
 
 export default fetchData;
