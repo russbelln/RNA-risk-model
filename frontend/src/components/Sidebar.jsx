@@ -20,11 +20,6 @@ const items = [
     icon: <DesktopOutlined />,
     label: <Link to="/score">Score</Link>,
   },
-  {
-    key: '3',
-    icon: <ContainerOutlined />,
-    label: <Link to="/aboutus">About us</Link>,
-  },
 ];
 
 const Sidebar = ({ collapsed, onToggle }) => {

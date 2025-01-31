@@ -1,0 +1,5 @@
+/* Agregar margen superior al encabezado h1 */
+.score-page-header {
+    margin-top: 60px; /* Ajusta este valor según sea necesario */
+    margin-left: 60px
+}

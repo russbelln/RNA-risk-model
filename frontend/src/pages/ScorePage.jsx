@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Modal, Button } from 'antd';
 import fetchData from '../services/Api';
-import Form from '../components/Form';
+import StepForm from '../components/StepForm';
+import ScoreGauge from '../components/ScoreGauge';
+import './ScorePage.css'; // Importa el archivo CSS
 
 const ScorePage = () => {
   const [features, setFeatures] = useState([]);
   const [score, setScore] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
     // Obtener las características desde el backend
@@ -24,15 +28,37 @@ const ScorePage = () => {
     fetchData.post('/score', { features: formData })
       .then((response) => {
         setScore(response.data.score);
+        setIsModalVisible(true); // Mostrar el modal cuando se reciba el score
       })
       .catch((error) => console.error('Error calculating score:', error));
   };
 
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div>
-      <h1>Calculadora de Score</h1>
-      <Form features={features} onSubmit={handleFormSubmit} />
-      {score !== null && <p>Score: {score}</p>}
+      <h1 className="score-page-header">Loan Risk calculator</h1>
+      <StepForm features={features} onSubmit={handleFormSubmit} />
+      <Modal
+        title="Score Result"
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={[
+          <Button key="ok" type="primary" onClick={handleOk}>
+            OK
+          </Button>,
+        ]}
+        width={600} // Ajusta el ancho del modal
+      >
+        {score !== null && <ScoreGauge score={score} width={500} height={500} />} {/* Ajusta el tamaño del gráfico */}
+      </Modal>
     </div>
   );
 };

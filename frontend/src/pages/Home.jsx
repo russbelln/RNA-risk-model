@@ -12,6 +12,9 @@ const githubUsers = [
 
 const Home = () => {
   const [showVideo, setShowVideo] = useState(false);
+  const handleButtonClick = () => {
+    window.location.href = 'https://hackmd.io/SGWzmLKLRFeSHm3HpL-1VA'; // Cambia este enlace al que desees
+  };
 
   return (
     <div className="video-background">
@@ -35,6 +38,13 @@ const Home = () => {
             >
               Watch Video
             </Button>
+              <Button 
+              className='about-button'
+              shape="round"
+              onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
+                About project
+              </Button>
+
           </div>
         </div>
       </div>

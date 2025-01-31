@@ -1,0 +1,19 @@
+/* Cambiar el color de los títulos de los steps */
+.ant-steps-item-title {
+    color: white !important;
+  }
+  
+  /* Agregar margen al contenedor principal del formulario */
+  .step-form-container {
+    margin: 50px; /* Ajusta este valor según sea necesario */
+    padding: 30px; /* Opcional: agrega padding si es necesario */
+  }
+
+  /* Agregar espacio entre los steps y los campos del formulario */
+.step-form-fields {
+    margin-top: 40px; /* Ajusta este valor según sea necesario */
+  }
+
+.form-label{
+    color: white !important;
+}

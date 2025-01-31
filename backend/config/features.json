@@ -1,154 +1,155 @@
 [
-  {
-      "name": "term",
-      "type": "dropdown",
-      "options": "36 months,60 months",
-      "description": "Plazo del préstamo"
-  },
-  {
-      "name": "int_rate",
-      "type": "number",
-      "description": "Tasa de interés"
-  },
-  {
-      "name": "installment",
-      "type": "number",
-      "description": "Cuota mensual"
-  },
-  {
-      "name": "sub_grade",
-      "type": "dropdown",
-      "options": "A1,A2,A3,A4,A5,B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4,D5,E1,E2,E3,E4,E5,F1,F2,F3,F4,F5,G1,G2,G3,G4,G5",
-      "description": "Sub-grado del préstamo"
-  },
-  {
-      "name": "emp_length",
-      "type": "number",
-      "description": "Duración del empleo en años"
-  },
-  {
-      "name": "home_ownership",
-      "type": "dropdown",
-      "options": "RENT,OWN,MORTGAGE,OTHER",
-      "description": "Tipo de propiedad de la vivienda"
-  },
-  {
-      "name": "annual_inc",
-      "type": "number",
-      "description": "Ingreso anual en USD"
-  },
-  {
-      "name": "verification_status",
-      "type": "dropdown",
-      "options": "Verified,Source Verified,Not Verified",
-      "description": "Estado de verificación del ingreso"
-  },
-  {
-      "name": "purpose",
-      "type": "dropdown",
-      "options": "debt_consolidation,credit_card,home_improvement,major_purchase,small_business,car,medical,moving,renewable_energy,house,educational,vacation,wedding,other",
-      "description": "Propósito del préstamo"
-  },
-  {
-      "name": "dti",
-      "type": "number",
-      "description": "Relación deuda-ingreso"
-  },
-  {
-      "name": "delinq_2yrs",
-      "type": "number",
-      "description": "Número de morosidades en los últimos 2 años"
-  },
-  {
-      "name": "inq_last_6mths",
-      "type": "number",
-      "description": "Número de consultas de crédito en los últimos 6 meses"
-  },
-  {
-      "name": "open_acc",
-      "type": "number",
-      "description": "Número de cuentas abiertas"
-  },
-  {
-      "name": "pub_rec",
-      "type": "number",
-      "description": "Número de registros públicos"
-  },
-  {
-      "name": "revol_bal",
-      "type": "number",
-      "description": "Saldo revolvente"
-  },
-  {
-      "name": "revol_util",
-      "type": "number",
-      "description": "Utilización del crédito revolvente"
-  },
-  {
-      "name": "total_acc",
-      "type": "number",
-      "description": "Número total de cuentas"
-  },
-  {
-      "name": "initial_list_status",
-      "type": "dropdown",
-      "options": "f,w",
-      "description": "Estado inicial de la lista"
-  },
-  {
-      "name": "out_prncp",
-      "type": "number",
-      "description": "Principal pendiente"
-  },
-  {
-      "name": "total_rec_prncp",
-      "type": "number",
-      "description": "Total de principal recibido"
-  },
-  {
-      "name": "total_rec_int",
-      "type": "number",
-      "description": "Total de interés recibido"
-  },
-  {
-      "name": "total_rec_late_fee",
-      "type": "number",
-      "description": "Total de cargos por pagos atrasados recibidos"
-  },
-  {
-      "name": "last_pymnt_amnt",
-      "type": "number",
-      "description": "Monto del último pago"
-  },
-  {
-      "name": "collections_12_mths_ex_med",
-      "type": "number",
-      "description": "Colecciones en los últimos 12 meses excluyendo médicas"
-  },
-  {
-      "name": "application_type",
-      "type": "dropdown",
-      "options": "INDIVIDUAL,JOINT",
-      "description": "Tipo de aplicación"
-  },
-  {
-      "name": "acc_now_delinq",
-      "type": "number",
-      "description": "Número de cuentas actualmente morosas"
-  },
-  {
-      "name": "tot_coll_amt",
-      "type": "number",
-      "description": "Monto total de colecciones"
-  },
-  {
-      "name": "tot_cur_bal",
-      "type": "number",
-      "description": "Saldo total actual"
-  },
-  {
-      "name": "total_rev_hi_lim",
-      "type": "number",
-      "description": "Límite de crédito revolvente total"
-  }
-]
+    {
+        "name": "term",
+        "type": "dropdown",
+        "options": "36 months,60 months",
+        "description": "Loan term"
+    },
+    {
+        "name": "int_rate",
+        "type": "number",
+        "description": "Interest rate"
+    },
+    {
+        "name": "installment",
+        "type": "number",
+        "description": "Monthly installment"
+    },
+    {
+        "name": "sub_grade",
+        "type": "dropdown",
+        "options": "A1,A2,A3,A4,A5,B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4,D5,E1,E2,E3,E4,E5,F1,F2,F3,F4,F5,G1,G2,G3,G4,G5",
+        "description": "Loan sub-grade"
+    },
+    {
+        "name": "emp_length",
+        "type": "number",
+        "description": "Employment duration in years"
+    },
+    {
+        "name": "home_ownership",
+        "type": "dropdown",
+        "options": "RENT,OWN,MORTGAGE,OTHER",
+        "description": "Home ownership type"
+    },
+    {
+        "name": "annual_inc",
+        "type": "number",
+        "description": "Annual income in USD"
+    },
+    {
+        "name": "verification_status",
+        "type": "dropdown",
+        "options": "Verified,Source Verified,Not Verified",
+        "description": "Income verification status"
+    },
+    {
+        "name": "purpose",
+        "type": "dropdown",
+        "options": "debt_consolidation,credit_card,home_improvement,major_purchase,small_business,car,medical,moving,renewable_energy,house,educational,vacation,wedding,other",
+        "description": "Loan purpose"
+    },
+    {
+        "name": "dti",
+        "type": "number",
+        "description": "Debt-to-income ratio"
+    },
+    {
+        "name": "delinq_2yrs",
+        "type": "number",
+        "description": "Number of delinquencies in the last 2 years"
+    },
+    {
+        "name": "inq_last_6mths",
+        "type": "number",
+        "description": "Number of credit inquiries in the last 6 months"
+    },
+    {
+        "name": "open_acc",
+        "type": "number",
+        "description": "Number of open accounts"
+    },
+    {
+        "name": "pub_rec",
+        "type": "number",
+        "description": "Number of public records"
+    },
+    {
+        "name": "revol_bal",
+        "type": "number",
+        "description": "Revolving balance"
+    },
+    {
+        "name": "revol_util",
+        "type": "number",
+        "description": "Revolving credit utilization"
+    },
+    {
+        "name": "total_acc",
+        "type": "number",
+        "description": "Total number of accounts"
+    },
+    {
+        "name": "initial_list_status",
+        "type": "dropdown",
+        "options": "f,w",
+        "description": "Initial listing status"
+    },
+    {
+        "name": "out_prncp",
+        "type": "number",
+        "description": "Outstanding principal"
+    },
+    {
+        "name": "total_rec_prncp",
+        "type": "number",
+        "description": "Total principal received"
+    },
+    {
+        "name": "total_rec_int",
+        "type": "number",
+        "description": "Total interest received"
+    },
+    {
+        "name": "total_rec_late_fee",
+        "type": "number",
+        "description": "Total late fees received"
+    },
+    {
+        "name": "last_pymnt_amnt",
+        "type": "number",
+        "description": "Amount of last payment"
+    },
+    {
+        "name": "collections_12_mths_ex_med",
+        "type": "number",
+        "description": "Collections in the last 12 months (excluding medical)"
+    },
+    {
+        "name": "application_type",
+        "type": "dropdown",
+        "options": "INDIVIDUAL,JOINT",
+        "description": "Application type"
+    },
+    {
+        "name": "acc_now_delinq",
+        "type": "number",
+        "description": "Number of accounts currently delinquent"
+    },
+    {
+        "name": "tot_coll_amt",
+        "type": "number",
+        "description": "Total collections amount"
+    },
+    {
+        "name": "tot_cur_bal",
+        "type": "number",
+        "description": "Total current balance"
+    },
+    {
+        "name": "total_rev_hi_lim",
+        "type": "number",
+        "description": "Total revolving credit limit"
+    }
+  ]
+  
