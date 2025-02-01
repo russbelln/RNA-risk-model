@@ -81,7 +81,7 @@ const Home = () => {
               ✖
             </button>
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+              url="https://www.youtube.com/watch?v=HrhpWuHZNfY"
               controls
               playing
               width="100%"
