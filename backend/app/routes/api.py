@@ -38,6 +38,15 @@ def calculate_score():
     
     return jsonify({'score': score})
 
+@api.route('/api/score', methods=['OPTIONS'])
+def handle_options():
+    response = jsonify()
+    response.headers.add("Access-Control-Allow-Origin", "https://rna-risk-model-frontend.onrender.com")
+    response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
+    response.headers.add("Access-Control-Allow-Credentials", "true")
+    return response, 204
+
 # Ruta para estadísticas poblacionales (placeholder)
 @api.route('/api/population-stats', methods=['GET'])
 def get_population_stats():

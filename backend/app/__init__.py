@@ -14,7 +14,8 @@ def create_app():
     app.config.from_object(Config)
 
     # Habilitar CORS para todas las rutas
-    CORS(app, origins="https://rna-risk-model-frontend.onrender.com", supports_credentials=True )
+    CORS(app, resources={r"/*": {"origins": "https://rna-risk-model-frontend.onrender.com"}}, supports_credentials=True)
+
     
     db.init_app(app)
     migrate.init_app(app, db)
