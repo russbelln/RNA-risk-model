@@ -1,25 +1,15 @@
 from flask import Blueprint, jsonify, request 
 from app.models import Feature, UserInput
 from app import db
-from app.services.score_service import calculate_probability
+from app.services.score_service import predecir_incumplimiento
+from app.services.features_service import STATIC_FEATURES
 
 api = Blueprint('api', __name__)
 
 # Ruta para obtener características dinámicas
 @api.route('/api/features', methods=['GET'])
 def get_features():
-    features = Feature.query.all()
-    response = [
-        {
-            'id': feature.id,
-            'name': feature.name,
-            'type': feature.type,
-            'options': feature.options,
-            'description': feature.description
-        }
-        for feature in features
-    ]
-    return jsonify(response)
+    return jsonify(STATIC_FEATURES)
 
 # Ruta para calcular el score
 @api.route('/api/score', methods=['POST'])
@@ -29,7 +19,7 @@ def calculate_score():
     
     
     # Lógica para calcular el score (placeholder)
-    score = float(calculate_probability(user_features))
+    score = float(predecir_incumplimiento(user_features))
     
     # Guardar entrada del usuario
     user_input = UserInput(features=str(user_features), score=score)
@@ -41,7 +31,7 @@ def calculate_score():
 @api.route('/api/score', methods=['OPTIONS'])
 def handle_options():
     response = jsonify()
-    response.headers.add("Access-Control-Allow-Origin", "https://rna-risk-model-frontend.onrender.com")
+    response.headers.add("Access-Control-Allow-Origin", "http://75.101.241.138:4188")
     response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
     response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
     response.headers.add("Access-Control-Allow-Credentials", "true")

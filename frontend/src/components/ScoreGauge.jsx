@@ -8,7 +8,7 @@ const needle = (value, data, cx, cy, iR, oR, color) => {
   data.forEach((v) => {
     total += v.value;
   });
-  const ang = 180 * (1 - total/value);
+  const ang = 180 * (value / 100); // Ajusta el ángulo de la aguja
   const length = (iR + 2 * oR) / 3;
   const sin = Math.sin(-RADIAN * ang);
   const cos = Math.cos(-RADIAN * ang);
@@ -32,11 +32,11 @@ export default class ScoreGauge extends PureComponent {
   render() {
     const { score } = this.props;
     const data = [
-      { name: 'A', value: 0.2, color: '#FF4500' },
-      { name: 'B', value: 0.2, color: '#FFA500' },
-      { name: 'C', value: 0.2, color: '#FFD700' },
-      { name: 'D', value: 0.2, color: '#9ACD32' },
-      { name: 'E', value: 0.2, color: '#008000' },
+      { name: 'A', value: 20, color: '#FF4500' },
+      { name: 'B', value: 20, color: '#FFA500' },
+      { name: 'C', value: 20, color: '#FFD700' },
+      { name: 'D', value: 20, color: '#9ACD32' },
+      { name: 'E', value: 20, color: '#008000' },
     ];
     const cx = 200;
     const cy = 250;
@@ -46,7 +46,7 @@ export default class ScoreGauge extends PureComponent {
 
     return (
       <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <h2>Your probability of default is: {(score*100).toFixed(1)}%</h2>
+        <h2>Your probability of default is: {(score * 100).toFixed(1)}%</h2>
         <PieChart width={400} height={500}>
           <Pie
             dataKey="value"

@@ -12,10 +12,12 @@ const githubUsers = [
 
 const Home = () => {
   const [showVideo, setShowVideo] = useState(false);
-  const handleButtonClick = () => {
+  const aboutButtonClick = () => {
     window.location.href = 'https://hackmd.io/SGWzmLKLRFeSHm3HpL-1VA'; // Cambia este enlace al que desees
   };
-
+  const codeButtonClick = () => {
+    window.location.href = 'https://github.com/russbelln/RNA-risk-model'; // Cambia este enlace al que desees
+  };
   return (
     <div className="video-background">
       {/* Video de fondo */}
@@ -41,9 +43,18 @@ const Home = () => {
               <Button 
               className='about-button'
               shape="round"
-              onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
+              onClick={aboutButtonClick} style={{ marginLeft: '10px' }}>
                 About project
               </Button>
+              <Button 
+              className='code-button'
+              shape="round"
+              onClick={codeButtonClick} style={{ marginLeft: '10px' }}>
+                Source code
+              </Button>
+            
+              
+
 
           </div>
         </div>

@@ -27,6 +27,7 @@ const ScorePage = () => {
     // Enviar datos al backend para calcular el score
     fetchData.post('/score', { features: formData })
       .then((response) => {
+        console.log(response);
         setScore(response.data.score);
         setIsModalVisible(true); // Mostrar el modal cuando se reciba el score
       })
@@ -47,7 +48,7 @@ const ScorePage = () => {
       <StepForm features={features} onSubmit={handleFormSubmit} />
       <Modal
         title="Score Result"
-        visible={isModalVisible}
+        open={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
